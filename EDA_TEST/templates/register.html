@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>用户注册页面</title>
+</head>
+
+<body>
+<fieldset>
+    <legend>用户的注册区域</legend>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2" style="color: red;font-weight: bolder">
+            {{msg}}
+        </div>
+    </div>
+    <form method="post" action="/polls/register/">
+        {% csrf_token %}
+        <table border="1" bordercolor="#0099ff" cellpadding="10px" cellspacing="0">
+            <tr>
+                <th colspan="3">注册页面</th>
+            </tr>
+            <tr>
+                <td>用户名：</td>
+                <td>
+                    <input  type="text" name="username" value=""/>
+                </td>
+            </tr>
+            <tr>
+                <td>密码：</td>
+                <td>
+                    <input type="password" name="password" />
+                </td>
+            </tr>
+            <tr>
+                <td>确认密码：</td>
+                <td>
+                    <input type="password" name="confirmpwd" />
+                </td>
+            </tr>
+
+            <tr>
+                <th colspan="3">
+                    <input type="submit" name="submit" value="提交" />
+                </th>
+            </tr>
+        </table>
+    </form>
+</fieldset>
+</body>
+</html>

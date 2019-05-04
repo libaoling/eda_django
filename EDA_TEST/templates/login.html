@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <style>
+        * {
+    margin: 0;
+    padding: 0
+}
+
+#loginBG {
+    background: url("{% static 'img/beijing.png' %}") no-repeat;
+    background-size: 100%;
+    width: 100vw;
+    height: 100vh;
+}
+
+#login {
+    width: 600px;
+    height: 460px;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    top: 254px;
+    left: 1094px;
+
+}
+
+.login_title {
+    font-size: 24px;
+    font-family: 'MicrosoftYaHei';
+    font-weight: 400;
+    color: rgba(34, 39, 43, 1);
+    margin-top: 17px;
+}
+
+.touxiang {
+
+    margin-top: 21px;
+}
+
+.inp {
+    width: 420px;
+    height: 50px;
+    border: 1px solid #aaa;
+
+}
+
+#user {
+    /* display: inline-block; */
+    margin-top: 20px;
+}
+
+#password {
+    margin-top: 20px;
+}
+
+#jumpTo_index {
+    width: 422px;
+    height: 50px;
+    display: inline-block;
+    background: #17B0A7;
+    font-size: 18px;
+    font-family: 'MicrosoftYaHei';
+    font-weight: bold;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    line-height: 50px;
+    text-decoration: none;
+    margin-top: 18px;
+}
+    </style>
+</head>
+
+
+<body>
+    <div id="loginBG">
+        <div id="login">
+
+            <img class="touxiang" src="{% static 'img/touxiang.png' %}" alt="">
+
+
+            <p class="login_title">多模态情绪识别研判系统</p>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2" style="color: red;font-weight: bolder">
+                    {{msg}}
+                </div>
+            </div>
+
+            <form action="/polls/login/" method="post" accept-charset="utf-8">
+                <input class="inp" id="username" name="username" type="text" placeholder="请输入账号">
+                <br />
+                <input class="inp" id="password" name="password" type="password" placeholder="请输入密码"><br>
+                <input id="jumpTo_index" type="submit" value="登录">
+            </form>
+
+        </div>
+    </div>
+</body>
+
+</html>
