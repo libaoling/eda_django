@@ -60,7 +60,6 @@ def login(req):
                 return JsonResponse(r(False,result={"msg": "用户名输入错误"}),json_dumps_params={'ensure_ascii': False})
         except Exception as e:
             logging.info(e)
-            print(e)
             # return render(req, 'login.html')
     # if req.method == 'GET':
     #     # return render(req,"login.html",{})
